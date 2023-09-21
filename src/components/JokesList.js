@@ -4,11 +4,11 @@ const JokesList = (props) => {
   const { jokes } = props;
   return (
     <>
-    <ol class="list-group list-group-numbered">
+    <ol>
         {jokes.map((item) => (
-          <li className="list-group-item d-flex justify-content-between align-items-start"  key={item.id}>
+          <li>
             <div>
-            <strong class='fw-bold'>{item.setup}</strong>
+            <strong>{item.setup}</strong>
             <p>{item.punchline}</p> 
             </div>
             
