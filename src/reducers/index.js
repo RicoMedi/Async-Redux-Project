@@ -1,8 +1,9 @@
 import data from "../data/data";
-import { TOGGLE_PUNCHLINE } from "../actions";
+import { TOGGLE_PUNCHLINE, FETCH_START, FETCH_SUCCESFUL } from "../actions";
+
 
 const initialState= {
-    jokes: data,
+    jokes: [],
     loading: false,
     error: '',
     visiblePunchlines: [],
@@ -10,6 +11,20 @@ const initialState= {
 }
  const reducer=(state=initialState, action)=>{
     switch(action.type){
+        case FETCH_START:
+            return{
+                ...state,
+                loading: true,
+                error:''
+            }
+        case FETCH_SUCCESFUL:
+            return{
+                ...state,
+                loading: false,
+                jokes: action.payload,
+                error:''
+            }
+
         case TOGGLE_PUNCHLINE:
             const { jokeId } = action.payload;
             const isPunchlineVisible = state.visiblePunchlines.includes(jokeId);
