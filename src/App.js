@@ -1,28 +1,38 @@
+import { connect } from 'react-redux';
 import React from 'react';
 import './App.css';
-import data from './data/data';
+
 import JokesList from './components/jokesList';
 
-function App() {
-  const jokes = data;
-  const loading = false;
-  const error = '';
+function App(props) {
+  
+  
+  const {loading,error}= props;
 
   return (
     <div className="App">
       <div className='header'>
         <h1> 😂 </h1>  
+       
       </div>
-      
+       {
+          (error !== "") && <h3>{error}</h3>
+        }
     {loading ? (
-        <h3>We are loading</h3>
+        <h3>We Are Loading...</h3>
       ) : (
-        <JokesList jokes={jokes} />
+        <JokesList />
       )}
       
       
     </div>
   );
 }
+const mapStateToProps= state =>{
+  return{
+    loading: state.loading,
+    error: state.error
+  }
+}
 
-export default App;
+export default connect(mapStateToProps)(App);
