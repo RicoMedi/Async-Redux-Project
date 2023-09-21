@@ -10,16 +10,17 @@ function App() {
 
   return (
     <div className="App">
-      <h1> 😂JOKE GENERATOR </h1>
-    
+      <div className='header'>
+        <h1> 😂 </h1>  
+      </div>
+      
     {loading ? (
         <h3>We are loading</h3>
       ) : (
         <JokesList jokes={jokes} />
       )}
-    
-     
-      <button>More Jokes</button>
+      
+      
     </div>
   );
 }

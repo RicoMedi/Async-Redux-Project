@@ -6,25 +6,46 @@
     align-items: center;
     justify-content:center;
   }
+  .header {
+    background-color: rgb(28, 28, 28);
+    height: 20%;
+    width: 100%; 
+    box-shadow: 0px 20px 50px rgba(18, 8, 8, 0.2); 
+}
+
+
+
 h1{
     font-size: 50px;
     text-align: center;
     color: rgb(6, 6, 6);
     
 }
+h2{
+    font-family: 'Lora';
+    text-decoration: underline;
+    color: black;
+    font-size: 25px;
+}
 ol{
     font-size: 20px;
 }
+
 .mainlist {
-    width: 50%;
-    border: black;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    margin: 0 auto; /* This centers the element horizontally */
-    text-align: left; /* This centers the text inside the element */
+    padding: 10px; 
+    margin: 0 auto;
+    text-align: left; 
+    
   }
+  .mainlist li {
+    padding-bottom: 30px; 
+    display: flex;
+    justify-content: space-between;/* Adjust the value to control the spacing */
+}
+
   .opener{
-    font-size: 18px;
+    font-size: 20px;
+    font-family: 'Lora', serif;
   }
 
  button{
@@ -42,6 +63,7 @@ ol{
     gap: 12px;
     border-radius: 8px;
     cursor: pointer;
+    font-family: 'Lora', serif;
 
  }
 
