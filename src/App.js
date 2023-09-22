@@ -3,22 +3,15 @@ import React from 'react';
 import './App.css';
 import { useEffect } from 'react';
 import JokesList from './components/jokesList';
-import { fetchStart, fetchSuccesful } from './actions';
-import axios from 'axios';
+import { getJokes } from './actions';
+
 
 function App(props) {
-  const {loading,error}= props;
+  const {loading,error, getJokes}= props;
 
 useEffect(()=>{
-  props.fetchStart();
-  axios.get('https://official-joke-api.appspot.com/random_ten')
-  .then(res=>{
-    
-    props.fetchSuccesful(res.data)
-  })
-  .catch(err=>{
-    console.log(err)
-  })
+  getJokes();
+  
 },[])
 
   return (
@@ -49,4 +42,4 @@ const mapStateToProps= state =>{
 
 
 
-export default connect(mapStateToProps, { fetchStart, fetchSuccesful })(App);
+export default connect(mapStateToProps, { getJokes })(App);
