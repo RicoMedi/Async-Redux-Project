@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
-import { togglePunchline } from "../actions";
+import { togglePunchline} from "../actions";
 
 const JokesList = props => {
   const { jokes, dispatchTogglePunchline } = props;
@@ -13,6 +13,8 @@ const JokesList = props => {
     const { visiblePunchlines } = props;
     return visiblePunchlines.includes(jokeId);
   };
+
+ 
 
   return (
     <div className="mainlist">
@@ -34,8 +36,7 @@ const JokesList = props => {
           </li>
         ))}
       </ol>
-
-      <button>More Jokes</button>
+     
     </div>
   );
 };
@@ -52,4 +53,3 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(JokesList);
-

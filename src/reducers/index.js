@@ -17,13 +17,14 @@ const initialState= {
                 loading: true,
                 error:''
             }
-        case FETCH_SUCCESFUL:
-            return{
-                ...state,
-                loading: false,
-                jokes: action.payload,
-                error:''
-            }
+            case FETCH_SUCCESFUL:
+                // const newJokes = action.payload;
+                return {
+                  ...state,
+                  jokes: action.payload,
+                  loading: false,
+                  error: null,
+                };
 
         case TOGGLE_PUNCHLINE:
             const { jokeId } = action.payload;

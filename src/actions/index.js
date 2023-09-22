@@ -6,10 +6,11 @@ export const FETCH_SUCCESFUL= "FETCH_SUCCESFUL";
 
 export const getJokes = ()=>{
   return(dispatch =>{
-    dispatch(fetchStart());
+    dispatch(fetchStart())
     axios.get('https://official-joke-api.appspot.com/random_ten')
     .then(res=>{
-      dispatch(fetchSuccesful(res.data));
+      
+      dispatch(fetchSuccesful(res.data))
     })
     .catch(err=>{
       console.log(err)

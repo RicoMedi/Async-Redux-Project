@@ -4,7 +4,7 @@ import './App.css';
 import { useEffect } from 'react';
 import JokesList from './components/jokesList';
 import { getJokes } from './actions';
-
+import GetButton from './components/GetButton';
 
 function App(props) {
   const {loading,error, getJokes}= props;
@@ -28,7 +28,7 @@ useEffect(()=>{
       ) : (
         <JokesList />
       )}
-      
+        <GetButton />
       
     </div>
   );
